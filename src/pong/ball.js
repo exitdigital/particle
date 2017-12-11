@@ -16,7 +16,7 @@ class Ball {
       direction: 0.8 * Math.PI * 2
     };
     this.particle = new Particle(options);
-    this.particle.radius = this.radius;
+    this.particle.radius = this.radius + 10;
 
   }
 

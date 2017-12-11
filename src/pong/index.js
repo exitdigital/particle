@@ -47,7 +47,7 @@ class Pong {
     this.text = new Text({viewport, context, document});
     const paddle = new Paddle({viewport});
     this.ball = new Ball({viewport, context, paddle});
-    this.mouse.radius = this.ball.particle.radius;
+    this.mouse.radius = this.ball.particle.radius ;
     this.paddle = paddle;
     this.render();
   }
