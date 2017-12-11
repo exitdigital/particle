@@ -15,7 +15,7 @@ class Pong {
     this.document = document;
     this.canvas = document.getElementById(id);
     this.context = this.canvas.getContext("2d");
-    this.mouse.radius = viewport.w / 10;
+    this.mouse.radius = viewport.w / 20;
     document.body.addEventListener("mousemove", e => {
       this.mouse.position.x = e.clientX;
       this.mouse.position.y = e.clientY;
@@ -47,6 +47,7 @@ class Pong {
     this.text = new Text({viewport, context, document});
     const paddle = new Paddle({viewport});
     this.ball = new Ball({viewport, context, paddle});
+    this.mouse.radius = this.ball.particle.radius;
     this.paddle = paddle;
     this.render();
   }

@@ -12,11 +12,11 @@ class Ball {
     const options = {
       x: viewport.w / 2,
       y: viewport.h - paddle.height - this.radius,
-      speed: Math.ceil((viewport.w * viewport.h) / 100000),
+      speed: Math.max(2, Math.min(7, Math.ceil((viewport.w * viewport.h) / 100000))),
       direction: 0.8 * Math.PI * 2
     };
     this.particle = new Particle(options);
-    this.particle.radius = viewport.w / 20;
+    this.particle.radius = this.radius;
 
   }
 
