@@ -13,7 +13,8 @@ class Text {
   particles = [];
 
   constructor({viewport, context, document}) {
-    this.source = document.getElementById('logo');
+    this.source = document.getElementById('logo-text');
+    this.scrollDown = document.getElementById('scroll-down');
     this.particles = [];
     this.width = viewport.w * 0.5;
     this.height = this.width / this.ratio;
@@ -61,8 +62,12 @@ class Text {
   };
 
 
-  render({context, ball, mouse}) {
+  render({context, viewport, ball, paddle, mouse}) {
 
+    const bottom = this.y + this.height;
+    const scrollHeight = this.scrollDown.offsetHeight || this.scrollDown.offsetHeight || 0;
+    const top = bottom + ((viewport.h - bottom) / 2) - (scrollHeight / 2) - (paddle.height / 2);
+    this.scrollDown.setAttribute("style", "top: " + top + "px")
     for (var i = 0; i < this.particles.length; i++) {
       var p = this.particles[i];
       context.fillStyle = this.color;

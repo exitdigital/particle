@@ -47,17 +47,19 @@ class Pong {
     this.text = new Text({viewport, context, document});
     const paddle = new Paddle({viewport});
     this.ball = new Ball({viewport, context, paddle});
-    this.mouse.radius = this.ball.particle.radius ;
+
+    this.mouse.radius = this.ball.particle.radius;
     this.paddle = paddle;
+
     this.render();
   }
 
   render() {
-    const {context, text, paddle, ball, viewport, mouse} = this;
+    const {context, scroll, text, paddle, ball, viewport, mouse} = this;
     context.clearRect(0, 0, viewport.w, viewport.h);
     ball.render({context, viewport, paddle});
     paddle.render({context, ball, viewport});
-    text.render({context, ball, mouse});
+    text.render({context, ball, mouse, viewport, paddle});
     requestAnimationFrame(this.render);
 
   }

@@ -1,5 +1,4 @@
 import autobind from 'autobind-decorator';
-import source from './assets/logo.svg';
 import Particle from './particle';
 
 @autobind

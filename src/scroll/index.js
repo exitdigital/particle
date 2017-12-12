@@ -17,6 +17,8 @@ const
   wheelEvent = 'onwheel' in document ? 'wheel' : document.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
 
 
+const noop = () => {
+};
 @autobind
 class Scroll {
   current = 0;
@@ -26,10 +28,14 @@ class Scroll {
   sections = [];
   offsets = [];
   subscription = null;
+  begin = null;
+  complete = null;
 
-  constructor({document, className}) {
+  constructor({document, className, begin = noop, complete = noop}) {
     this.className = className;
     this.document = document;
+    this.begin = begin;
+    this.complete = complete;
     this.body = document.getElementsByTagName("BODY")[0];
   }
 
@@ -113,7 +119,7 @@ class Scroll {
         this.isScrolling = true;
         this.scrollTo(v);
       })
-
+    this.current = this.calculateNearest();
   }
 
 
@@ -142,7 +148,9 @@ class Scroll {
   }
 
   scrollTo(i) {
-
+    const last = this.current;
+    const next = i;
+    this.begin(last, next);
     const options = {
       duration: 1100,
       mobileHA: false,
@@ -150,6 +158,7 @@ class Scroll {
       complete: () => {
         this.current = i;
         this.isScrolling = false;
+        this.complete(last, next);
       }
     };
     Velocity(this.getSection(i), 'scroll', options);
