@@ -1,0 +1,131 @@
+$light-grey: #9d9d9c;
+$red: #ff0000;
+$blue: #410ddc;
+$dark-blue: #3300cc;
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translate(-50%, 0);
+  }
+  40% {
+    transform: translate(-50%, -30px);
+  }
+  60% {
+    transform: translate(-50%, -15px);
+  }
+}
+
+@font-face {
+  font-family: CodaSemi;
+  src: url('../../assets/font/CodaSemi.otf');
+}
+
+@font-face {
+  font-family: CodaBold;
+  src: url('../../assets/font/CodaBold.otf');
+}
+
+@font-face {
+  font-family: CodaBlack;
+  src: url('../../assets/font/CodaBlack.otf');
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h2.giant {
+  font-size: 30px;
+}
+
+html, body {
+  margin: 0;
+}
+
+section {
+  padding-right: 15px;
+  padding-left: 15px;
+  &.ptop {
+    padding-top: 70px;
+  }
+
+  text-align: center;
+  position: relative;
+
+  .arrow {
+    animation: bounce 2s infinite;
+    position: absolute;
+    width: 17px;
+    height: 11px;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.red-dot {
+  color: $red;
+}
+
+.section-title {
+  margin: 0;
+  padding: 0;
+  font-family: CodaBold;
+  color: #3300cc;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+section.centered {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+
+  .logo {
+    width: 100px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h2.giant {
+    font-size: 55px;
+  }
+
+  section {
+    padding: 0 30px;
+    &.ptop {
+      padding-top: 100px;
+    }
+
+    .arrow {
+      width: 34px;
+      height: 22px;
+      bottom: 50px;
+    }
+
+  }
+}

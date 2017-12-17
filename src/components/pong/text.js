@@ -5,6 +5,7 @@ import Particle from './particle';
 @autobind
 class Text {
   ratio = 533.9 / 218.12;
+  scrollDownRatio = 331 / 31;
   friction = 0.95;
   ease = 0.19;
   spacing = 4;
@@ -13,6 +14,7 @@ class Text {
   particles = [];
 
   constructor({viewport, context, document}) {
+    this.viewport = viewport;
     this.source = document.getElementById('logo-text');
     this.scrollDown = document.getElementById('scroll-down');
     this.particles = [];
@@ -22,6 +24,16 @@ class Text {
     this.spacing = this.size;
     this.x = viewport.w / 2 - this.width * .5;
     this.y = viewport.h / 2 - this.height * .5;
+
+    if (this.height > this.viewport.h / 2) {
+      this.height = this.viewport.h / 2;
+      this.width = this.height * this.ratio;
+      this.size = Math.max(2, Math.floor((this.width * this.height) / 27564));
+      this.spacing = this.size;
+      this.x = viewport.w / 2 - this.width * .5;
+      this.y = viewport.h / 2 - this.height * .5;
+    }
+
     context.drawImage(this.source, this.x, this.y, this.width, this.height);
     var pixels = context.getImageData(0, 0, viewport.w, viewport.h).data;
     var index;
@@ -64,10 +76,11 @@ class Text {
 
   render({context, viewport, ball, paddle, mouse}) {
 
-    const bottom = this.y + this.height;
-    const scrollHeight = this.scrollDown.offsetHeight || this.scrollDown.offsetHeight || 0;
+    const bottom = this.y + this.height,
+      scrollWidth = this.width * 0.4,
+      scrollHeight = scrollWidth / this.scrollDownRatio;
     const top = bottom + ((viewport.h - bottom) / 2) - (scrollHeight / 2) - (paddle.height / 2);
-    this.scrollDown.setAttribute("style", "top: " + top + "px")
+    this.scrollDown.setAttribute("style", "opacity:1;top: " + top + "px; height:" + scrollHeight + 'px; width:' + scrollWidth + 'px')
     for (var i = 0; i < this.particles.length; i++) {
       var p = this.particles[i];
       context.fillStyle = this.color;

@@ -6,8 +6,8 @@ class Ball {
 
   logoRatio = 533.9 / 18.185;
 
-  constructor({viewport, paddle}) {
-    this.radius = viewport.w * 0.5 / this.logoRatio;
+  constructor({viewport, paddle, text}) {
+    this.radius = text.width / this.logoRatio;
     const options = {
       x: viewport.w / 2,
       y: viewport.h - paddle.height - this.radius,

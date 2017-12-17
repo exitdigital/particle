@@ -1,0 +1,77 @@
+.form {
+  padding: 0 15px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  ::-webkit-input-placeholder {
+    color: $light-grey;
+    opacity: 1;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $light-grey;
+    opacity: 1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $light-grey;
+    opacity: 1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $light-grey;
+    opacity: 1;
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: $light-grey;
+    opacity: 1;
+  }
+
+  ::placeholder { /* Most modern browsers support this now. */
+    color: $light-grey;
+    opacity: 1;
+  }
+
+
+
+  input,textarea {
+    font: CodaSemi;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    color: $light-grey;
+    border-bottom: 1px solid $light-grey;
+    width: 100%;
+    &:focus {
+
+      border-bottom: 2px solid $blue;
+    }
+  }
+  input {
+    height: 50px;
+  }
+
+  button {
+    cursor:pointer;
+    border: 2px solid $blue;
+    font: CodaSemi;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-transform:uppercase;
+    padding: 5px 10px;
+    border-radius:0;
+    color: $blue;
+
+
+  }
+  .form-submit {
+    text-align: right;
+  }
+  textarea {
+    height: 50px;
+    &.no-resize {
+      resize:none;
+    }
+  }
+
+  .form-row {
+    padding: 10px;
+  }
+}
+

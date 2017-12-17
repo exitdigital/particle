@@ -1,0 +1,22 @@
+section#mission {
+  width: 100%;
+  max-width: 1000px;
+  margin:auto;
+
+  .owner {
+    margin-bottom: 40px;
+  }
+  p {
+    font-family:CodaSemi;
+    color: $light-grey;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  section#mission {
+    p {
+      font-size: 20px;
+    }
+  }
+}

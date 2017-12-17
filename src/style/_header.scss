@@ -1,0 +1,59 @@
+#header {
+  opacity: 0;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+
+  .inner {
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    .contact {
+      display: none;
+      font-family: CodaSemi;
+      color: $light-grey;
+      font-size: 15px;
+      padding-right: 30px;
+      letter-spacing: 0.1em;
+    }
+
+    .left {
+      margin-right: auto;
+    }
+    .right-inner {
+      display: flex;
+    }
+
+    .burger {
+      cursor: pointer;
+      width: 37px;
+      height: 27px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #header {
+    height: 100px;
+    .inner {
+      padding: 20px;
+
+      .contact {
+        display: inline;
+        font-size: 15px;
+        padding-right: 30px;
+        letter-spacing: 0.1em;
+      }
+
+      .burger {
+        width: 37px;
+        height: 27px;
+      }
+    }
+  }
+
+}

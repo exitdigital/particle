@@ -2,56 +2,168 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Coda - Coming Soon</title>
-    <link rel="shortcut icon" type="image/png" href="/favicon.png?v=3"/>
-    <link rel="stylesheet" href="build/bundle.css">
+    <title>Coda</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png?v=4"/>
+    <link rel="stylesheet" href="build/bundle.css?v=4">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="build/bundle.js"></script>
 </head>
 <body>
 <main>
     <div id="header">
         <div class="inner">
-            <div class="left"><img src="assets/img/logo.svg" id="logo"></div>
+            <div class="left"><img src="assets/img/logo.svg" class="logo"></div>
             <div class="right">
                 <div class="right-inner">
                     <span class="contact">+49 176 60997282</span>
                     <span class="contact">info@coda.works</span>
-                    <img src="assets/img/burger.png" class="burger">
+                    <a href="#" class="menu-toggle"><img class="burger" src="assets/img/burger.png"></a>
                 </div>
             </div>
         </div>
     </div>
-    <section class="section">
+    <section id="home" class="section">
         <img src="assets/img/logo-text.svg" id="logo-text">
         <img src="assets/img/scroll-down-red.png" id="scroll-down">
         <canvas id="pong"></canvas>
     </section>
-    <section class="section reveal">
+    <section id="mission" class="section usp ptop">
         <div class="inner">
             <h2 class="giant section-title dot-text">Not just an agency<span class="red-dot">.</span></h2>
-            <h2 class="giant section-title dot-text">We're your new product owner<span class="red-dot">.</span></h2>
+            <h2 class="giant section-title dot-text owner">We're your new product owner<span class="red-dot">.</span>
+            </h2>
+            <p>We can help you bridge the gap between your product and the technical solutions required to make it a
+                success.</p>
+            <p>With over 10 years experience solving challenges across various digital platforms and vectors, our focus
+                is on delivering high quality solutions tailored towards your business needs.</p>
         </div>
-        <img class="arrow" src="assets/img/arrow.png"/>
     </section>
-    <section class="section clients reveal">
+    <section id="references" class="section clients ptop">
         <div class="inner">
-            <h2 class="section-title usp dot-text">our happy clients<span class="red-dot">.</span></h2>
+            <h2 class="giant section-title usp dot-text">our happy clients<span class="red-dot">.</span></h2>
+            <ul class="client-list">
+                <li><img src="/assets/img/clients/contexta.jpg" class="client-image"/></li>
+                <li><img src="/assets/img/clients/coop.jpg" class="client-image"/></li>
+                <li><img src="/assets/img/clients/tomtalent.jpg" class="client-image"/></li>
+                <li><img src="/assets/img/clients/banknow.jpg" class="client-image"/></li>
+                <li><img src="/assets/img/clients/twisper.jpg" class="client-image"/></li>
+                <li><img src="/assets/img/clients/vogele.jpg" class="client-image"/></li>
+                <li><img src="/assets/img/clients/teleboy.jpg" class="client-image"/></li>
+                <li><img src="/assets/img/clients/dife.jpg" class="client-image"/></li>
+                <li><img src="/assets/img/clients/rusterei.jpg" class="client-image"/></li>
+            </ul>
         </div>
     </section>
-    <section class="section team">
+    <section id="team" class="section team ptop">
         <div class="inner">
-            <h2 class="section-title usp dot-text">meet our team<span class="red-dot">.</span></h2>
+            <h2 class="giant section-title usp dot-text">meet our team<span class="red-dot">.</span></h2>
+            <ul class="team-list">
+                <li class="team-item">
+                    <div class="inner">
+                        <img src="/assets/img/team/david.jpg" class="team-image"/>
+                        <h3>David de Brito</h3>
+                        <p>Founder & Strategist</p>
+                    </div>
+                </li>
+                <li class="team-item">
+                    <div class="inner">
+                        <img src="/assets/img/team/conall.jpg" class="team-image"/>
+                        <h3>Conall O'Reilly</h3>
+                        <p>Founder & Developer</p>
+                    </div>
+                </li>
+                <li class="team-item">
+                    <div class="inner">
+                        <img src="/assets/img/team/anina.jpg" class="team-image"/>
+                        <h3>Anina Takeff</h3>
+                        <p>Art Director</p>
+                    </div>
+                </li>
+                <li class="team-item">
+                    <div class="inner">
+                        <img src="/assets/img/team/ole.jpg" class="team-image"/>
+                        <h3>Ole </h3>
+                        <p>Finance Administration</p>
+                    </div>
+                </li>
+                <li class="team-item">
+                    <div class="inner">
+                        <img src="/assets/img/team/melissa.jpg" class="team-image"/>
+                        <h3>Melissa Kabakci</h3>
+                        <p>Project Manager</p>
+                    </div>
+                </li>
+                <li class="team-item">
+                    <div class="inner">
+                        <img src="/assets/img/team/mark.jpg" class="team-image"/>
+                        <h3>Mark Thompson-Johnson</h3>
+                        <p>Copywriter</p>
+                    </div>
+                </li>
+            </ul>
         </div>
     </section>
-    <section class="section contact">
+    <section id="contact" class="section contact ptop">
         <div class="inner">
-            <h2 class="section-title usp dot-text">drop us a line<span class="red-dot">.</span></h2>
+            <h2 class="giant section-title usp dot-text">drop us a line<span class="red-dot">.</span></h2>
+            <div class="form">
+                <div class="form-row">
+                    <input class="no-scroll-focus" type="text" placeholder="Name"/>
+                </div>
+                <div class="form-row">
+                    <input class="no-scroll-focus" type="text" placeholder="Email"/>
+                </div>
+                <div class="form-row">
+                    <textarea class="no-scroll-focus" class="no-resize" cols="6" type="text"
+                              placeholder="Message"></textarea>
+                </div>
+                <div class="form-row form-submit">
+                    <button class="btn">send</button>
+                </div>
+            </div>
         </div>
     </section>
-    <footer class="section" id="footer">
+    <footer class="section no-min-height" id="footer">
+        <div class="left">
+            <ul class="social-links">
+                <li class="social-link-item">
+                    <a class="social-link" href="https://www.facebook.com/coda.works/" target="_blank">facebook</a>
+                </li>
+                <li class="social-link-item">
+                    <a class="social-link" href="https://www.instagram.com/coda.works/" target="_blank">instagram</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="copyright">© 2017 Coda.Works UG. ALL RIGHTS RESERVED.</div>
+        </div>
 
     </footer>
+    <div id="menu">
+        <div class="top">
+            <div class="left"><img src="assets/img/logo-white.svg" class="logo"></div>
+            <div class="right">
+                <img src="assets/img/close.png" class="close menu-toggle">
+            </div>
+        </div>
+        <div class="content">
+            <ul class="site-links">
+                <li class="site-link-item"><a class="site-link menu-toggle" href="#home">home</a></li>
+                <li class="site-link-item"><a class="site-link menu-toggle" href="#mission">mission</a></li>
+                <li class="site-link-item"><a class="site-link menu-toggle" href="#references">references</a></li>
+                <li class="site-link-item"><a class="site-link menu-toggle" href="#team">team</a></li>
+                <li class="site-link-item"><a class="site-link menu-toggle" href="#contact">contact</a></li>
+            </ul>
+        </div>
+        <ul class="social-links">
+            <li class="social-link-item">
+                <a class="social-link" href="https://www.facebook.com/coda.works/" target="_blank">facebook</a>
+            </li>
+            <li class="social-link-item">
+                <a class="social-link" href="https://www.instagram.com/coda.works/" target="_blank">instagram</a>
+            </li>
+        </ul>
+    </div>
 </main>
+<script type="text/javascript" src="build/bundle.js?v=4"></script>
 </body>
 </html>

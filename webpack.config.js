@@ -1,9 +1,10 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin("build/bundle.css");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-  entry: './app.js',
+  entry: './src/app.js',
   output: {
     filename: 'build/bundle.js'
   },
@@ -25,7 +26,10 @@ module.exports = {
         test: /\.scss$/,
         use: extractSass.extract({
           use: [{
-            loader: "css-loader"
+            loader: "css-loader",
+            options: {
+              minimize: true
+            }
           }, {
             loader: "sass-loader"
           }],
@@ -49,6 +53,7 @@ module.exports = {
     ]
   },
   plugins: [
-    extractSass
+    extractSass,
+    new UglifyJsPlugin()
   ]
 };

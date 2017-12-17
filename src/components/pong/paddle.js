@@ -7,9 +7,9 @@ class Paddle {
   ratio = 533.9 / 218.12;
   logoRatio = 218.12 / 29.01;
 
-  constructor({viewport}) {
+  constructor({viewport, text}) {
 
-    this.height = ((viewport.w * 0.5) / this.ratio) / this.logoRatio;
+    this.height = text.height / this.logoRatio;
     this.width = this.height * 5.5;
     const options = {
       x: viewport.w / 2 - (this.width / 2),
