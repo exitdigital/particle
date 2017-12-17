@@ -1,3 +1,7 @@
+section#home {
+  min-height: 100%;
+}
+
 #pong {
   display: block;
 }
@@ -7,7 +11,7 @@
 }
 
 #scroll-down {
-  opacity:0;
+  opacity: 0;
   animation: blink-animation 1s steps(5, start) infinite;
   position: absolute;
   top: 0;
