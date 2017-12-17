@@ -77,7 +77,7 @@ class Text {
   render({context, viewport, ball, paddle, mouse}) {
 
     const bottom = this.y + this.height,
-      scrollWidth = Math.max(120, this.width * 0.5),
+      scrollWidth = Math.min(280, Math.max(120, this.width * 0.5)),
       scrollHeight = scrollWidth / this.scrollDownRatio;
     const top = bottom + ((viewport.h - bottom) / 2) - (scrollHeight / 2) - (paddle.height / 2);
     this.scrollDown.setAttribute("style", "opacity:1;top: " + top + "px; height:" + scrollHeight + 'px; width:' + scrollWidth + 'px')
