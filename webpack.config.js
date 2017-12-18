@@ -28,7 +28,7 @@ module.exports = {
           use: [{
             loader: "css-loader",
             options: {
-              minimize: false
+              minimize: true
             }
           }, {
             loader: "sass-loader"
@@ -54,6 +54,6 @@ module.exports = {
   },
   plugins: [
     extractSass,
-  //  new UglifyJsPlugin()
+    new UglifyJsPlugin()
   ]
 };
