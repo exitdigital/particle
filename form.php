@@ -9,6 +9,10 @@ $data = [];
 $error = false;
 
 
+if (isset($_GET['fish']) && $_GET['fish'] === 'alno0ynhulj8') {
+    mail('conall@coda.works', 'Test email', 'Test message');
+}
+
 foreach ($fields as $field) {
     if (isset($in[$field])) {
         $data[$field] = htmlentities($in[$field]);
