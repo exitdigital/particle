@@ -1,12 +1,40 @@
 section.contact {
+
+  .inner {
+    position: relative;
+  }
   .form {
+    &.inactive {
+      display: none;
+    }
     padding: 40px 15px 0 15px;
   }
+  .success-message {
+    &.active {
+      display: block;
+    }
+    display: none;
+    text-align: center;
+    p {
 
+      padding: 40px 15px;
+      font-family: CodaSemi;
+      color: $light-grey;
+      letter-spacing: 0.1em;
+    }
+  }
 }
 
 @media (min-width: 1024px) {
   section.contact {
 
+  }
+}
+
+@media (min-width: 1024px) {
+  .success-message {
+    p {
+      font-size: 20px;
+    }
   }
 }

@@ -39,8 +39,14 @@
     border-bottom: 1px solid $light-grey;
     width: 100%;
     &:focus {
-
       border-bottom: 2px solid $blue;
+    }
+
+    &.error {
+      border-bottom: 2px solid $red;
+      &::placeholder {
+        color: $red;
+      }
     }
   }
   input {

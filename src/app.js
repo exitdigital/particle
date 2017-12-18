@@ -2,6 +2,7 @@ import Scroll from './components/scroll';
 import Header from './components/header';
 import Pong from './components/pong';
 import Menu from './components/menu';
+import Form from './components/form';
 
 
 import {Observable} from 'rxjs/Observable';
@@ -19,8 +20,9 @@ if (typeof window !== 'undefined') {
     };
   };
 
-  const init = ({scroll, pong, menu, header}) => {
+  const init = ({scroll, pong, form, header}) => {
     const viewport = getViewport();
+    form.init();
     pong.init({viewport});
     scroll.init({viewport});
 
@@ -32,6 +34,7 @@ if (typeof window !== 'undefined') {
 
   window.onload = () => {
     const
+      form = new Form({document}),
       header = new Header({el: document.getElementById('header')}),
       begin = (last, next) => {
         console.log("begin scroll", last, next);
@@ -55,9 +58,11 @@ if (typeof window !== 'undefined') {
           document
         });
 
-    init({scroll, pong, menu, header});
+    init({scroll, pong, menu, header, form});
+
+
     Observable.fromEvent(window, 'resize')
       .debounceTime(100)
-      .subscribe(() => init({scroll, pong, menu, header}));
+      .subscribe(() => init({scroll, form, pong, menu, header}));
   };
 }

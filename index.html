@@ -28,12 +28,14 @@
     </section>
     <section id="mission" class="section usp ptop">
         <div class="inner">
-            <h2 class="giant section-title dot-text">Not just an agency<span class="red-dot">.</span></h2>
-            <h2 class="giant section-title dot-text owner">We're your new product owner<span class="red-dot">.</span>
+            <h2 class="giant section-title dot-text">not just an agency<span class="red-dot">.</span></h2>
+            <h2 class="giant section-title dot-text owner">
+                <w></w>
+                e're your new product owner<span class="red-dot">.</span>
             </h2>
             <p>We can help you bridge the gap between your product and the technical solutions required to make it a
                 success.</p>
-            <p>With over 10 years experience solving challenges across various digital platforms and vectors, our focus
+            <p>With over 10 years' experience solving challenges across various digital platforms and vectors, our focus
                 is on delivering high quality solutions tailored towards your business needs.</p>
         </div>
     </section>
@@ -105,20 +107,23 @@
     <section id="contact" class="section contact ptop">
         <div class="inner">
             <h2 class="giant section-title usp dot-text">drop us a line<span class="red-dot">.</span></h2>
-            <div class="form">
+            <form id="form" class="form">
                 <div class="form-row">
-                    <input class="no-scroll-focus" type="text" placeholder="Name"/>
+                    <input id="f_name" required class="no-scroll-focus" type="text" placeholder="Name"/>
                 </div>
                 <div class="form-row">
-                    <input class="no-scroll-focus" type="text" placeholder="Email"/>
+                    <input id="f_email" required type="email" class="no-scroll-focus" type="text" placeholder="Email"/>
                 </div>
                 <div class="form-row">
-                    <textarea class="no-scroll-focus" class="no-resize" cols="6" type="text"
+                    <textarea id="f_message" required class="no-scroll-focus no-resize" type="text"
                               placeholder="Message"></textarea>
                 </div>
                 <div class="form-row form-submit">
-                    <button class="btn">send</button>
+                    <button type="submit" id="f_submit" class="btn">send</button>
                 </div>
+            </form>
+            <div id="form-success"  class="success-message">
+                <p>Thanks, we'll be in touch with you shortly!</p>
             </div>
         </div>
     </section>
