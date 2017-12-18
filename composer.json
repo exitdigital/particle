@@ -1,0 +1,12 @@
+{
+  "name": "conall/particle",
+  "authors": [
+    {
+      "name": "Conall O'Reilly",
+      "email": "conallor@gmail.com"
+    }
+  ],
+  "require": {
+    "sendgrid/sendgrid": "~6.0"
+  }
+}
