@@ -5,13 +5,13 @@ function send($name, $email, $message)
 {
     $from = new SendGrid\Email($name, $email);
     $to = new SendGrid\Email("Coda", "hello@coda.works");
-    $to = new SendGrid\Email("Coda", "conall@coda.works");
     $subject = sprintf('New message from %s [%s]', $name, $email);
     $content = new SendGrid\Content("text/plain", $message);
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
     $sg = new \SendGrid('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');
     $response = $sg->client->mail()->send()->post($mail);
-
+    $mail = new SendGrid\Mail($from, $subject, 'conall@coda.works', $content);
+    $response = $sg->client->mail()->send()->post($mail);
     return [
         'code' => $response->statusCode(),
         'body' => $response->body()
@@ -28,7 +28,7 @@ $error = false;
 
 
 if (isset($_GET['fish']) && $_GET['fish'] === 'alno0ynhulj8') {
-    var_dump(send('Test User', 'conall@coda.works', 'Test message dasd asd 
+    var_dump(send('Test User', 'hello@coda.works', 'Test message dasd asd 
     
     dasdsa
     d
