@@ -111,6 +111,7 @@ class Scroll {
     Observable
       .merge(wheel$, keyDown$, touchMove$)
       .subscribe(({e, direction, source}) => {
+        return;
         const current = this.current,
           next = wrapMinMax(current + direction),
           currentOffset = this.offsets[current],
@@ -159,13 +160,14 @@ class Scroll {
       });
 
     const throttledWheel$ = wheel$
-      .throttleTime(1500)
+      .throttleTime(500)
       .map(mapNext);
 
     this.subscription = Observable
-      .merge(throttledWheel$, throttledKeyDown$, debouncedScroll$, throttledTouchMove$)
+      .merge(throttledWheel$, throttledKeyDown$, throttledTouchMove$)
       .distinctUntilChanged()
       .subscribe(({v, source}) => {
+        return;
         const {current, isFreeScrolling, isScrolling} = this;
         if (!this.isFreeScrolling && !this.isScrolling && v !== this.current) {
           this.isScrolling = true;
@@ -185,7 +187,7 @@ class Scroll {
       this.sections.push(el);
       this.offsets.push(this.getScrollTop() + rect.top)
       this.heights.push(el.offsetHeight);
-      if(!el.classList.contains('no-min-height')) {
+      if (!el.classList.contains('no-min-height')) {
         el.setAttribute('style', 'min-height:' + viewport.h + 'px');
       }
     });

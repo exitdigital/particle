@@ -42,7 +42,7 @@ class Pong {
   render() {
     const {context, text, paddle, ball, viewport, mouse} = this;
 
-    if (this.scroll.getScrollTop() < 300) {
+    if (this.scroll.getScrollTop() === 0) {
       context.clearRect(0, 0, viewport.w, viewport.h);
       ball.render({context, viewport, paddle});
       paddle.render({context, ball, viewport});

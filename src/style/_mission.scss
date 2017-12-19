@@ -2,7 +2,9 @@ section#mission {
   width: 100%;
   max-width: 1000px;
   margin:auto;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .owner {
     margin-bottom: 40px;
   }
